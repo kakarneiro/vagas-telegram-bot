@@ -11,11 +11,26 @@
     "analista de dados júnior"
   ],
   "localizacao_linkedin": "São Paulo, Brazil",
-  "buscas_vagas_com": [],
-  "buscas_infojobs": [],
-  "buscas_catho": [],
+  "buscas_vagas_com": [
+    "estagio-desenvolvimento",
+    "estagio-ti",
+    "estagio-dados",
+    "desenvolvedor-junior"
+  ],
+  "buscas_infojobs": [
+    "estágio desenvolvimento de software",
+    "estágio desenvolvedor",
+    "estágio dados",
+    "estágio inteligência artificial"
+  ],
+  "buscas_catho": [
+    "desenvolvedor-junior",
+    "estagio-desenvolvimento",
+    "estagio-ti",
+    "analista-de-dados-junior"
+  ],
   "buscas_programathor": [],
-  "janela_horas": 1,
+  "janela_horas": 6,
   "janela_horas_primeira_execucao": 24,
   "max_vagas_por_execucao": 20,
   "excluir_no_titulo": [
