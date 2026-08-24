@@ -2,7 +2,7 @@ name: Bot de vagas
 
 on:
   schedule:
-    - cron: "7 * * * *"   # a cada hora, no minuto 7 (UTC)
+    - cron: "*/10 * * * *"   # a cada 10 minutos
   workflow_dispatch: {}    # permite rodar manualmente pela aba Actions
 
 permissions:
@@ -39,6 +39,7 @@ jobs:
         run: |
           git config user.name "vagas-bot"
           git config user.email "actions@github.com"
+          git pull --rebase || true
           git add seen.json
           git diff --cached --quiet || git commit -m "atualiza histórico de vagas [skip ci]"
           git push
