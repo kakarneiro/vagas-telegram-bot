@@ -547,7 +547,7 @@ def collect_all(window_h: int) -> dict:
         add(fetch_vagas_com(slug))
         time.sleep(1)
 
-    for kw in CONFIG["buscas"][:4]:
+    for kw in CONFIG.get("buscas_infojobs", []):
         log(f"Buscando (InfoJobs): {kw}")
         add(fetch_infojobs(kw))
         time.sleep(1)
