@@ -1,0 +1,50 @@
+{
+  "buscas": [
+    "estágio desenvolvimento de software",
+    "estágio desenvolvedor",
+    "estágio dados",
+    "estágio inteligência artificial",
+    "estágio python",
+    "desenvolvedor júnior python",
+    "desenvolvedor júnior java",
+    "engenheiro de dados júnior",
+    "analista de dados júnior"
+  ],
+  "localizacao_linkedin": "São Paulo, Brazil",
+  "buscas_vagas_com": [
+    "estagio-desenvolvimento",
+    "estagio-ti",
+    "estagio-dados",
+    "desenvolvedor-junior"
+  ],
+  "buscas_catho": [
+    "desenvolvedor-junior",
+    "estagio-desenvolvimento",
+    "estagio-ti",
+    "analista-de-dados-junior"
+  ],
+  "buscas_programathor": [
+    "/jobs?expertise=J%C3%BAnior",
+    "/jobs?contract_type=Est%C3%A1gio"
+  ],
+  "janela_horas": 3,
+  "janela_horas_primeira_execucao": 24,
+  "max_vagas_por_execucao": 20,
+  "excluir_no_titulo": [
+    "sênior", "senior", " sr", "especialista", "tech lead",
+    "gerente", "coordenador", "arquiteto", "supervisor",
+    "head ", "principal", "staff ", "pleno"
+  ],
+  "nunca_excluir_se_tiver": [
+    "estágio", "estagiário", "estagiario", "júnior", "junior", " jr", "trainee"
+  ],
+  "relevancia_titulo": [
+    "desenvolv", "software", "sistemas", "dados", "dev", "t.i", " ti",
+    "tecnologia", "python", "java", "front", "back", "full stack",
+    "fullstack", "inteligência artificial", " ia", "machine learning",
+    "programador", "programadora", "computação", "web", "mobile",
+    "qa", "devops", "cloud", "banco de dados", "power bi", "b.i",
+    "engenharia de dados", "ciência de dados", "cientista de dados"
+  ],
+  "fontes_com_filtro_de_relevancia": ["Vagas.com", "InfoJobs", "Catho"]
+}
