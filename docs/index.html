@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Painel do Bot de Vagas</title>
+<style>
+  :root {
+    color-scheme: light;
+    --surface: #fcfcfb; --card: #ffffff; --border: #e4e3df;
+    --text-1: #0b0b0b; --text-2: #52514e; --text-3: #8a8984;
+    --accent: #2a78d6; --accent-soft: #dbeafe;
+    --good: #008300; --bad: #e34948; --warn: #eda100;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      color-scheme: dark;
+      --surface: #1a1a19; --card: #232322; --border: #3a3936;
+      --text-1: #ffffff; --text-2: #c3c2b7; --text-3: #8a8984;
+      --accent: #3987e5; --accent-soft: #1e3a5f;
+      --good: #4ade80; --bad: #e66767; --warn: #c98500;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background: var(--surface); color: var(--text-1);
+    font: 15px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    padding: 24px; max-width: 1080px; margin: 0 auto;
+  }
+  header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 10px; margin-bottom: 20px; }
+  h1 { font-size: 22px; }
+  .sub { color: var(--text-2); font-size: 13px; }
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-bottom: 20px; }
+  .tile { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 14px 16px; }
+  .tile .label { font-size: 12px; color: var(--text-2); text-transform: uppercase; letter-spacing: .04em; }
+  .tile .value { font-size: 26px; font-weight: 700; margin-top: 2px; }
+  .tile .hint { font-size: 12px; color: var(--text-3); margin-top: 2px; }
+  .ok  { color: var(--good); } .err { color: var(--bad); } .warn { color: var(--warn); }
+  section { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 16px; margin-bottom: 16px; overflow-x: auto; }
+  h2 { font-size: 15px; margin-bottom: 10px; }
+  svg text { font: 11px system-ui, sans-serif; fill: var(--text-2); }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; }
+  th { text-align: left; color: var(--text-2); font-weight: 600; padding: 6px 10px; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  td { padding: 6px 10px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  td a { color: var(--accent); text-decoration: none; font-weight: 600; }
+  td a:hover { text-decoration: underline; }
+  .src { display: inline-block; padding: 1px 8px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 11px; font-weight: 600; white-space: nowrap; }
+  .runs { display: flex; flex-wrap: wrap; gap: 6px; }
+  .run { font-size: 12px; padding: 3px 9px; border-radius: 999px; border: 1px solid var(--border); color: var(--text-2); white-space: nowrap; }
+  .muted { color: var(--text-3); font-size: 12px; }
+  #tip { position: fixed; pointer-events: none; background: var(--text-1); color: var(--surface);
+         padding: 4px 9px; border-radius: 6px; font-size: 12px; display: none; z-index: 9; }
+  footer { color: var(--text-3); font-size: 12px; text-align: center; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div id="tip"></div>
+<header>
+  <h1>⚡ Painel do Bot de Vagas</h1>
+  <span class="sub" id="updated">carregando…</span>
+</header>
+
+<div class="tiles">
+  <div class="tile"><div class="label">Sistema</div><div class="value" id="t-status">…</div><div class="hint" id="t-status-hint"></div></div>
+  <div class="tile"><div class="label">Enviadas hoje</div><div class="value" id="t-hoje">…</div><div class="hint">vagas no Telegram</div></div>
+  <div class="tile"><div class="label">Última vaga</div><div class="value" id="t-ultima" style="font-size:17px">…</div><div class="hint" id="t-ultima-hint"></div></div>
+  <div class="tile"><div class="label">Vagas conhecidas</div><div class="value" id="t-total">…</div><div class="hint">no histórico (sem repetição)</div></div>
+</div>
+
+<section>
+  <h2>Envios por hora — últimas 24h (horário de Brasília)</h2>
+  <div id="chart-horas"></div>
+</section>
+
+<section>
+  <h2>Envios por fonte — últimos 7 dias</h2>
+  <div id="chart-fontes"></div>
+</section>
+
+<section>
+  <h2>Últimas vagas enviadas</h2>
+  <table id="tabela">
+    <thead><tr><th>Quando</th><th>Vaga</th><th>Empresa</th><th>Local</th><th>Fonte</th></tr></thead>
+    <tbody></tbody>
+  </table>
+</section>
+
+<section>
+  <h2>Execuções do robô na nuvem (GitHub Actions)</h2>
+  <div class="runs" id="runs">carregando…</div>
+  <p class="muted" style="margin-top:8px">O robô da nuvem roda a cada ~10-20 min. As vagas ⚡ do Modo Turbo saem do seu PC e também aparecem nas listas acima quando o Turbo sincroniza o histórico.</p>
+</section>
+
+<footer>Atualiza sozinho a cada 2 minutos · dados com até ~5 min de atraso · feito com Claude</footer>
+
+<script>
+const REPO = 'kakarneiro/vagas-telegram-bot';
+const RAW = 'https://raw.githubusercontent.com/' + REPO + '/main/';
+const TZ = 'America/Sao_Paulo';
+const tip = document.getElementById('tip');
+
+function fmt(d, opts) { return new Date(d).toLocaleString('pt-BR', Object.assign({ timeZone: TZ }, opts)); }
+function hoursAgo(d) {
+  const m = Math.round((Date.now() - new Date(d)) / 60000);
+  if (m < 60) return m + ' min atrás';
+  if (m < 2880) return Math.round(m / 60) + ' h atrás';
+  return Math.round(m / 1440) + ' dias atrás';
+}
+function showTip(e, text) { tip.textContent = text; tip.style.display = 'block';
+  tip.style.left = Math.min(e.clientX + 12, innerWidth - 160) + 'px'; tip.style.top = (e.clientY - 30) + 'px'; }
+function hideTip() { tip.style.display = 'none'; }
+
+function barChart(el, labels, values, tips) {
+  const W = Math.max(el.clientWidth || 640, 320), H = 150, pad = 24, bottom = 22;
+  const max = Math.max(1, ...values);
+  const n = values.length, bw = Math.min(26, (W - pad * 2) / n - 3);
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img">`;
+  for (const g of [0.5, 1]) {
+    const y = H - bottom - (H - bottom - 14) * g;
+    s += `<line x1="${pad}" x2="${W-pad}" y1="${y}" y2="${y}" stroke="var(--border)" stroke-width="1"/>`;
+    s += `<text x="${pad-4}" y="${y+4}" text-anchor="end">${Math.round(max*g)}</text>`;
+  }
+  values.forEach((v, i) => {
+    const x = pad + (W - pad * 2) * (i / n) + 2;
+    const h = v === 0 ? 0 : Math.max(3, (H - bottom - 14) * v / max);
+    const y = H - bottom - h;
+    s += `<rect x="${x}" y="${y}" width="${bw}" height="${h}" rx="4" fill="var(--accent)"
+           data-tip="${tips[i]}" opacity="${v===0?0:1}"/>`;
+    if (v === 0) s += `<rect x="${x}" y="${H-bottom-2}" width="${bw}" height="2" rx="1" fill="var(--border)" data-tip="${tips[i]}"/>`;
+    if (n <= 30 && (i % Math.ceil(n / 12) === 0))
+      s += `<text x="${x + bw/2}" y="${H-6}" text-anchor="middle">${labels[i]}</text>`;
+  });
+  s += '</svg>';
+  el.innerHTML = s;
+  el.querySelectorAll('rect').forEach(r => {
+    r.addEventListener('mousemove', e => showTip(e, r.dataset.tip));
+    r.addEventListener('mouseleave', hideTip);
+  });
+}
+
+function hbarChart(el, entries) {
+  const max = Math.max(1, ...entries.map(e => e[1]));
+  const W = Math.max(el.clientWidth || 640, 320), rowH = 26, H = entries.length * rowH + 6;
+  let s = `<svg viewBox="0 0 ${W} ${H}" width="100%" height="${H}" role="img">`;
+  entries.forEach(([name, v], i) => {
+    const y = i * rowH + 4, lw = 110;
+    const w = Math.max(3, (W - lw - 60) * v / max);
+    s += `<text x="${lw-8}" y="${y+13}" text-anchor="end" style="font-weight:600; fill:var(--text-1)">${name}</text>`;
+    s += `<rect x="${lw}" y="${y}" width="${w}" height="18" rx="4" fill="var(--accent)" data-tip="${name}: ${v} vaga(s)"/>`;
+    s += `<text x="${lw + w + 8}" y="${y+13}" style="fill:var(--text-1); font-weight:600">${v}</text>`;
+  });
+  s += '</svg>';
+  el.innerHTML = s;
+  el.querySelectorAll('rect').forEach(r => {
+    r.addEventListener('mousemove', e => showTip(e, r.dataset.tip));
+    r.addEventListener('mouseleave', hideTip);
+  });
+}
+
+async function jfetch(url) {
+  const ctl = new AbortController();
+  const timer = setTimeout(() => ctl.abort(), 10000);
+  try { const r = await fetch(url, { signal: ctl.signal });
+        if (!r.ok) throw new Error(r.status); return await r.json(); }
+  finally { clearTimeout(timer); }
+}
+
+async function carregar() {
+  const bust = '?t=' + Math.floor(Date.now() / 120000);
+  let enviadas = [], seen = {}, runs = null;
+  try { enviadas = await jfetch(RAW + 'enviadas.json' + bust); } catch (e) {}
+  try { seen = await jfetch(RAW + 'seen.json' + bust); } catch (e) {}
+  try { const d = await jfetch('https://api.github.com/repos/' + REPO + '/actions/runs?per_page=20');
+        runs = d.workflow_runs || []; } catch (e) {}
+
+  const agora = new Date();
+  document.getElementById('updated').textContent = 'atualizado às ' + fmt(agora, { hour: '2-digit', minute: '2-digit' });
+
+  // tiles
+  const hojeStr = agora.toLocaleDateString('pt-BR', { timeZone: TZ });
+  const deHoje = enviadas.filter(v => new Date(v.t).toLocaleDateString('pt-BR', { timeZone: TZ }) === hojeStr);
+  document.getElementById('t-hoje').textContent = deHoje.length;
+  document.getElementById('t-total').textContent = Object.keys(seen).length || '—';
+
+  const ult = enviadas[enviadas.length - 1];
+  if (ult) {
+    document.getElementById('t-ultima').textContent = hoursAgo(ult.t);
+    document.getElementById('t-ultima-hint').textContent = ult.title.slice(0, 40);
+  } else { document.getElementById('t-ultima').textContent = '—'; }
+
+  const st = document.getElementById('t-status'), sh = document.getElementById('t-status-hint');
+  if (runs && runs.length) {
+    const last = runs[0];
+    const mins = Math.round((Date.now() - new Date(last.created_at)) / 60000);
+    const okc = last.conclusion === 'success' || last.status === 'in_progress' || last.status === 'queued';
+    if (okc && mins <= 45) { st.textContent = '● Ativo'; st.className = 'value ok'; }
+    else if (okc) { st.textContent = '● Atrasado'; st.className = 'value warn'; }
+    else { st.textContent = '● Falhou'; st.className = 'value err'; }
+    sh.textContent = 'última execução ' + hoursAgo(last.created_at);
+  } else { st.textContent = '—'; sh.textContent = 'não consegui ler as execuções'; }
+
+  // envios por hora (24h)
+  const horas = [], vals = [], tipsH = [];
+  for (let i = 23; i >= 0; i--) {
+    const h = new Date(agora - i * 3600000);
+    const key = h.toISOString().slice(0, 13);
+    const rot = h.toLocaleTimeString('pt-BR', { timeZone: TZ, hour: '2-digit' });
+    const c = enviadas.filter(v => v.t.slice(0, 13) === key).length;
+    horas.push(rot + 'h'); vals.push(c); tipsH.push(`${rot}h — ${c} vaga(s)`);
+  }
+  barChart(document.getElementById('chart-horas'), horas, vals, tipsH);
+
+  // por fonte (7 dias)
+  const corte = Date.now() - 7 * 86400000;
+  const porFonte = {};
+  enviadas.filter(v => new Date(v.t) > corte).forEach(v => porFonte[v.source] = (porFonte[v.source] || 0) + 1);
+  const entries = Object.entries(porFonte).sort((a, b) => b[1] - a[1]);
+  document.getElementById('chart-fontes').parentElement.style.display = entries.length ? '' : 'none';
+  if (entries.length) hbarChart(document.getElementById('chart-fontes'), entries);
+
+  // tabela
+  const tb = document.querySelector('#tabela tbody');
+  tb.innerHTML = enviadas.slice(-30).reverse().map(v => `
+    <tr>
+      <td style="white-space:nowrap">${fmt(v.t, { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</td>
+      <td><a href="${v.url}" target="_blank" rel="noopener">${v.title}</a></td>
+      <td>${v.company || '—'}</td>
+      <td>${v.location || '—'}</td>
+      <td><span class="src">${v.source}</span></td>
+    </tr>`).join('') || '<tr><td colspan="5" class="muted">nenhum envio registrado ainda (o registro começou hoje)</td></tr>';
+
+  // execuções
+  const rd = document.getElementById('runs');
+  if (runs) {
+    rd.innerHTML = runs.slice(0, 14).map(r => {
+      const icon = r.status !== 'completed' ? '⏳' : r.conclusion === 'success' ? '✅' : '❌';
+      return `<span class="run">${icon} ${fmt(r.created_at, { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' })}</span>`;
+    }).join('');
+  } else rd.innerHTML = '<span class="muted">limite de consultas atingido — tenta de novo em alguns minutos</span>';
+}
+
+carregar();
+setInterval(() => { if (!document.hidden) carregar(); }, 120000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) carregar(); });
+</script>
+</body>
+</html>
