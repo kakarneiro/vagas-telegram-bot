@@ -40,6 +40,6 @@ jobs:
           git config user.name "vagas-bot"
           git config user.email "actions@github.com"
           git pull --rebase || true
-          git add seen.json
+          git add seen.json enviadas.json
           git diff --cached --quiet || git commit -m "atualiza histórico de vagas [skip ci]"
           git push
