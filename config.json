@@ -8,7 +8,9 @@
     "desenvolvedor júnior python",
     "desenvolvedor júnior java",
     "engenheiro de dados júnior",
-    "analista de dados júnior"
+    "analista de dados júnior",
+    "estágio suporte técnico",
+    "analista de suporte júnior"
   ],
   "localizacao_linkedin": "São Paulo, Brazil",
   "buscas_vagas_com": [
@@ -47,7 +49,8 @@
     "fullstack", "inteligência artificial", " ia", "machine learning",
     "programador", "programadora", "computação", "web", "mobile",
     "qa", "devops", "cloud", "banco de dados", "power bi", "b.i",
-    "engenharia de dados", "ciência de dados", "cientista de dados"
+    "engenharia de dados", "ciência de dados", "cientista de dados",
+    "suporte técnico", "help desk", "service desk", "sql"
   ],
-  "fontes_com_filtro_de_relevancia": ["Vagas.com", "InfoJobs", "Catho"]
+  "fontes_com_filtro_de_relevancia": ["Vagas.com", "InfoJobs", "Catho", "LinkedIn"]
 }

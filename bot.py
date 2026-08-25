@@ -518,6 +518,9 @@ def collect_all(window_h: int) -> dict:
     """Roda todas as fontes e devolve {job_id: job} (sem filtrar seen)."""
     collected = {}
 
+    loc_ok = re.compile(
+        r"são paulo|\bsp\b|remoto|home office|híbrido", re.IGNORECASE)
+
     def add(found):
         for job in found:
             jid = job_id(job["url"])
@@ -525,12 +528,16 @@ def collect_all(window_h: int) -> dict:
                 continue
             if not title_ok(job["title"], job["source"]):
                 continue
-            # Gupy busca o Brasil todo: aceita remoto ou SP
-            if job["source"] == "Gupy" and not job["remote"]:
-                loc = job["location"].lower()
-                if not ("são paulo" in loc
-                        or re.search(r"\bsp\b", loc)):
+            # filtro de localização para TODAS as fontes:
+            # aceita remoto, ou SP; localização vazia só passa se a fonte
+            # já busca por região (LinkedIn/Adzuna/Jooble usam São Paulo)
+            if job.get("remote"):
+                pass
+            elif job["location"].strip():
+                if not loc_ok.search(job["location"]):
                     continue
+            elif job["source"] in ("Gupy", "Vagas.com", "Catho"):
+                continue  # sem localização em fonte nacional: descarta
             collected[jid] = job
 
     for kw in CONFIG["buscas"]:
@@ -542,25 +549,32 @@ def collect_all(window_h: int) -> dict:
         add(fetch_jooble(kw))
         time.sleep(2)  # gentileza com as APIs
 
-    for slug in CONFIG.get("buscas_vagas_com", []):
-        log(f"Buscando (Vagas.com): {slug}")
-        add(fetch_vagas_com(slug))
-        time.sleep(1)
+    # Fontes sem data de publicação: fora do horário comercial elas só
+    # "giram" vagas antigas na primeira página. Só consulta das 07h às
+    # 20h de Brasília (10h-23h UTC) para não virar ruído de madrugada.
+    hora_utc = NOW.hour
+    if 10 <= hora_utc <= 23:
+        for slug in CONFIG.get("buscas_vagas_com", []):
+            log(f"Buscando (Vagas.com): {slug}")
+            add(fetch_vagas_com(slug))
+            time.sleep(1)
 
-    for kw in CONFIG.get("buscas_infojobs", []):
-        log(f"Buscando (InfoJobs): {kw}")
-        add(fetch_infojobs(kw))
-        time.sleep(1)
+        for kw in CONFIG.get("buscas_infojobs", []):
+            log(f"Buscando (InfoJobs): {kw}")
+            add(fetch_infojobs(kw))
+            time.sleep(1)
 
-    for slug in CONFIG.get("buscas_catho", []):
-        log(f"Buscando (Catho): {slug}")
-        add(fetch_catho(slug))
-        time.sleep(1)
+        for slug in CONFIG.get("buscas_catho", []):
+            log(f"Buscando (Catho): {slug}")
+            add(fetch_catho(slug))
+            time.sleep(1)
 
-    for path in CONFIG.get("buscas_programathor", []):
-        log(f"Buscando (Programathor): {path}")
-        add(fetch_programathor(path))
-        time.sleep(1)
+        for path in CONFIG.get("buscas_programathor", []):
+            log(f"Buscando (Programathor): {path}")
+            add(fetch_programathor(path))
+            time.sleep(1)
+    else:
+        log("(Fontes sem data pausadas fora do horário 07h-20h BRT)")
 
     return collected
 
@@ -605,14 +619,32 @@ def main() -> None:
     log(f"Novas: {len(fresh)} {por_fonte} | enviando até {len(jobs)}")
 
     sent = 0
+    enviadas_agora = []
     for job in jobs:
         try:
             send_job(job)
             seen[job_id(job["url"])] = NOW.isoformat()
+            enviadas_agora.append({
+                "t": NOW.isoformat(),
+                "title": job["title"], "company": job["company"],
+                "location": job["location"], "source": job["source"],
+                "url": job["url"],
+            })
             sent += 1
             time.sleep(1.2)  # limite do Telegram: ~1 msg/s
         except Exception as exc:  # noqa: BLE001
             log(f"Falha ao enviar '{job['title']}': {exc}")
+
+    if enviadas_agora:
+        env_file = BASE / "enviadas.json"
+        try:
+            historico = json.loads(env_file.read_text(encoding="utf-8"))
+        except Exception:  # noqa: BLE001
+            historico = []
+        historico.extend(enviadas_agora)
+        env_file.write_text(
+            json.dumps(historico[-400:], ensure_ascii=False, indent=0),
+            encoding="utf-8")
 
     if first_run:
         # não deixa o excedente da primeira rodada virar spam nas próximas
