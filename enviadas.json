@@ -1,22 +1,6 @@
 [
 {
 "t": "2026-08-28T04:29:56.173105+00:00",
-"title": "Estagiário de Suporte Técnico a Vendas",
-"company": "Honeywell Technologies",
-"location": "Barueri, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/estagi%C3%A1rio-de-suporte-t%C3%A9cnico-a-vendas-at-honeywell-technologies-4460130452"
-},
-{
-"t": "2026-08-28T04:29:56.173105+00:00",
-"title": "Assistente de Dados e Revenue Management",
-"company": "Apê Smart Studios",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/assistente-de-dados-e-revenue-management-at-ap%C3%AA-smart-studios-4460182283"
-},
-{
-"t": "2026-08-28T04:29:56.173105+00:00",
 "title": "Engenheiro(a) de Dados e BI (Power BI)",
 "company": "EY",
 "location": "São Paulo, SP",
@@ -3198,5 +3182,21 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagio-ti-em-sao-paulo__12163943.aspx"
+},
+{
+"t": "2026-10-29T02:38:02.168653+00:00",
+"title": "Desenvolvedor(a) Full Stack",
+"company": "Avanade",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-full-stack-at-avanade-4470998337"
+},
+{
+"t": "2026-10-29T02:38:02.168653+00:00",
+"title": "Desenvolvedor(a) FullStack",
+"company": "Avanade",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-fullstack-at-avanade-4484783264"
 }
 ]
