@@ -1,21 +1,5 @@
 [
 {
-"t": "2026-09-01T12:45:44.698320+00:00",
-"title": "Estágio de Engenharia de Dados ",
-"company": "Belgo Arames",
-"location": "Contagem, Minas Gerais (híbrido)",
-"source": "Gupy",
-"url": "https://belgo.gupy.io/job/eyJqb2JJZCI6MTIzOTA2NTMsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=gupy_portal"
-},
-{
-"t": "2026-09-01T12:45:44.698320+00:00",
-"title": "#1398 Estágio Em Marketing Comercial Em Clínica De Estética Na Barra Da Tijuca (Híbrido)",
-"company": "Ontem",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-1398-estagio-marketing-comercial-clinica-estetica-em-rio-janeiro__11972019.aspx"
-},
-{
 "t": "2026-09-01T19:42:17.198292+00:00",
 "title": "Analista Suporte Junior",
 "company": "Stefanini Group",
@@ -3198,5 +3182,21 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-professora-engenharias,-ti-design-unisul-pedra-branca-em-santa-catarina__12175611.aspx"
+},
+{
+"t": "2026-11-01T02:36:31.598601+00:00",
+"title": "Software Embarcado / Eletrônica",
+"company": "TECA – Tecnologia e Engenharia para Saúde e Automação",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/software-embarcado-eletr%C3%B4nica-at-teca-%E2%80%93-tecnologia-e-engenharia-para-sa%C3%BAde-e-automa%C3%A7%C3%A3o-4485922866"
+},
+{
+"t": "2026-11-01T02:36:31.598601+00:00",
+"title": "Programador de PCP & PCM - SP",
+"company": "Lukscolor Tintas",
+"location": "São Bernardo do Campo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/programador-de-pcp-pcm-sp-at-lukscolor-tintas-4483952813"
 }
 ]
