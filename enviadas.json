@@ -1,37 +1,5 @@
 [
 {
-"t": "2026-09-03T21:17:08.774971+00:00",
-"title": "ESTAGIO-GRADUAÇÃO EM ENGENHARIA DE SOFTWARE / ANÁLISE DE SISTEMAS / SISTEMAS PARA INTERNET",
-"company": "Hoje",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-estagio-graduacao-engenharia-software-analise-em-rio-grande-do-sul__11984868.aspx"
-},
-{
-"t": "2026-09-03T21:17:08.774971+00:00",
-"title": "Estagiário De TI",
-"company": "Hoje",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-estagiario-ti-em-bahia__11984652.aspx"
-},
-{
-"t": "2026-09-03T21:17:08.774971+00:00",
-"title": "Estágio - Administração (Treinamento E Desenvolvimento)",
-"company": "Hoje",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-estagio-administracao-treinamento-desenvolvimento-em-minas-gerais__11984811.aspx"
-},
-{
-"t": "2026-09-04T01:02:16.366572+00:00",
-"title": "Estágio em Tecnologia da Informação",
-"company": "InterTox",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/est%C3%A1gio-em-tecnologia-da-informa%C3%A7%C3%A3o-at-intertox-4463165168"
-},
-{
 "t": "2026-09-04T01:02:16.366572+00:00",
 "title": "Estagiário(a) Conformidade dos Dados de Mercado | Setor Elétrico | Vaga afirmativa também para Pessoas Pretas e Pardas, LGBTIA+, PCD e Gerações",
 "company": "Câmara de Comercialização de Energia Elétrica - CCEE",
@@ -3198,5 +3166,37 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-oportunidade-intercambio-profissional-chennai,-em-sao-paulo__12189757.aspx"
+},
+{
+"t": "2026-11-06T03:06:00.517180+00:00",
+"title": "Desenvolvedor(a) de Integrações (Python e Java) | FullStack Web",
+"company": "Rock Encantech",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-de-integra%C3%A7%C3%B5es-python-e-java-fullstack-web-at-rock-encantech-4486921912"
+},
+{
+"t": "2026-11-06T03:06:00.517180+00:00",
+"title": "Analista em Automação e DevSecOps",
+"company": "FCamara",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-em-automa%C3%A7%C3%A3o-e-devsecops-at-fcamara-4488060803"
+},
+{
+"t": "2026-11-06T03:06:00.517180+00:00",
+"title": "Desenvolvedor(a) Back End",
+"company": "Avanade",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-back-end-at-avanade-4488045076"
+},
+{
+"t": "2026-11-06T03:06:00.517180+00:00",
+"title": "Estágio em TI",
+"company": "Aboissa Commodity Brokers",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/est%C3%A1gio-em-ti-at-aboissa-commodity-brokers-4488095275"
 }
 ]
