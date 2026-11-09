@@ -1,13 +1,5 @@
 [
 {
-"t": "2026-09-04T01:02:16.366572+00:00",
-"title": "ASSISTENTE DE TI",
-"company": "Consigaz",
-"location": "Barueri, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/assistente-de-ti-at-consigaz-4463173019"
-},
-{
 "t": "2026-09-04T05:45:45.995839+00:00",
 "title": "Pessoa Desenvolvedora Golang (PcD)",
 "company": "Shopee",
@@ -3198,5 +3190,13 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagiario-tecnologia-da-informacao-em-sao-paulo__12197790.aspx"
+},
+{
+"t": "2026-11-09T20:45:27.316346+00:00",
+"title": "Estagiário(A) De RH - Marco Das Três Fronteiras",
+"company": "Hoje",
+"location": "",
+"source": "InfoJobs",
+"url": "https://www.infojobs.com.br/vaga-de-estagiarioa-rh-marco-tres-fronteiras-em-parana__12198553.aspx"
 }
 ]
