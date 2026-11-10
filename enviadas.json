@@ -1,46 +1,6 @@
 [
 {
 "t": "2026-09-04T05:45:45.995839+00:00",
-"title": "Pessoa Desenvolvedora Golang (PcD)",
-"company": "Shopee",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/pessoa-desenvolvedora-golang-pcd-at-shopee-4460008494"
-},
-{
-"t": "2026-09-04T05:45:45.995839+00:00",
-"title": "Desenvolvedor(a) Salesforce & Data Engineering | Databricks, Python e Integrações",
-"company": "IBM",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-salesforce-data-engineering-databricks-python-e-integra%C3%A7%C3%B5es-at-ibm-4460790178"
-},
-{
-"t": "2026-09-04T05:45:45.995839+00:00",
-"title": "Ruby on Rails Developer ID85376",
-"company": "AgileEngine",
-"location": "São Bernardo do Campo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/ruby-on-rails-developer-id85376-at-agileengine-4463176214"
-},
-{
-"t": "2026-09-04T05:45:45.995839+00:00",
-"title": "Ruby on Rails Developer ID85376",
-"company": "AgileEngine",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/ruby-on-rails-developer-id85376-at-agileengine-4463158472"
-},
-{
-"t": "2026-09-04T05:45:45.995839+00:00",
-"title": "Middle Full Stack Engineer ID86300",
-"company": "AgileEngine",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/middle-full-stack-engineer-id86300-at-agileengine-4463175218"
-},
-{
-"t": "2026-09-04T05:45:45.995839+00:00",
 "title": "Analista de Dados Inteligência Comercial Pl - Vaga Afirmativa para PcD (Pessoa com Deficiência)",
 "company": "Pfizer",
 "location": "São Paulo, SP",
@@ -3198,5 +3158,45 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagiarioa-rh-marco-tres-fronteiras-em-parana__12198553.aspx"
+},
+{
+"t": "2026-11-10T02:56:15.406627+00:00",
+"title": "Desenvolvedor Jr",
+"company": "Veritas Hub",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-jr-at-veritas-hub-4489180954"
+},
+{
+"t": "2026-11-10T02:56:15.406627+00:00",
+"title": "Software Engineer (Go, Python, CI/CD, Rotation On-call) - Hybrid",
+"company": "FactSet",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/software-engineer-go-python-ci-cd-rotation-on-call-hybrid-at-factset-4487421716"
+},
+{
+"t": "2026-11-10T02:56:15.406627+00:00",
+"title": "Analista de Desenvolvimento Rede de Serviço Júnior",
+"company": "Porto",
+"location": "Barueri, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-de-desenvolvimento-rede-de-servi%C3%A7o-j%C3%BAnior-at-porto-4489178482"
+},
+{
+"t": "2026-11-10T02:56:15.406627+00:00",
+"title": "ANALISTA DE SISTEMAS JR",
+"company": "Grupo Base",
+"location": "Salto, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-de-sistemas-jr-at-grupo-base-4487995085"
+},
+{
+"t": "2026-11-10T02:56:15.406627+00:00",
+"title": "TACTUS - ASSISTENTE DE DESENVOLVIMENTO (TECNOLOGIA E AUTOMAÇÃO) - PRESENCIAL/HÍBRIDO",
+"company": "Tactus Contabilidade Digital",
+"location": "São Bernardo do Campo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/tactus-assistente-de-desenvolvimento-tecnologia-e-automa%C3%A7%C3%A3o-presencial-h%C3%ADbrido-at-tactus-contabilidade-digital-4489193262"
 }
 ]
