@@ -1,45 +1,5 @@
 [
 {
-"t": "2026-09-04T13:55:46.051504+00:00",
-"title": "Estagiário De TI",
-"company": "Ontem",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-estagiario-ti-em-rio-janeiro__11985316.aspx"
-},
-{
-"t": "2026-09-04T13:55:46.051504+00:00",
-"title": "Estágio na área de Engenharia Desenho e Desenvolvimento",
-"company": "Publicada Hoje",
-"location": "IEL SP",
-"source": "Catho",
-"url": "https://www.catho.com.br/vagas/estagio-na-area-de-engenharia-desenho-e-desenvolvimento/38260057"
-},
-{
-"t": "2026-09-04T17:15:36.783795+00:00",
-"title": "Banco De Tecnologia - Afirmativo PCD",
-"company": "Hoje",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-banco-tecnologia-afirmativo-pcd-em-sao-paulo__11987382.aspx"
-},
-{
-"t": "2026-09-04T19:36:56.784022+00:00",
-"title": "|ENCANTECH| Estágio em Dados (Advanced Analytics)",
-"company": "Encantech - Lojas Renner S.A.",
-"location": "Porto Alegre, Rio Grande do Sul (híbrido)",
-"source": "Gupy",
-"url": "https://encantech.gupy.io/job/eyJqb2JJZCI6MTI0MjM5MzgsInNvdXJjZSI6Imd1cHlfcG9ydGFsIn0=?jobBoardSource=gupy_portal"
-},
-{
-"t": "2026-09-04T21:46:03.901878+00:00",
-"title": "Estagiário De Suporte Técnico",
-"company": "Hoje",
-"location": "",
-"source": "InfoJobs",
-"url": "https://www.infojobs.com.br/vaga-de-estagiario-suporte-tecnico-em-minas-gerais__11989730.aspx"
-},
-{
 "t": "2026-09-05T01:08:20.063021+00:00",
 "title": "Analista de Desenvolvimento Jr",
 "company": "Buddha Spa",
@@ -3198,5 +3158,45 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagiario-engenharia,-tecnologia-farmacia-em-sao-paulo__12171514.aspx"
+},
+{
+"t": "2026-11-12T04:18:04.482659+00:00",
+"title": "Desenvolvedor Front-End Pl | ReactJS",
+"company": "Webmotors",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-front-end-pl-reactjs-at-webmotors-4489048922"
+},
+{
+"t": "2026-11-12T04:18:04.482659+00:00",
+"title": "Desenvolvedor (a) Java Fullstack PL",
+"company": "Global TI Tecnologia em Negócios",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-a-java-fullstack-pl-at-global-ti-4489070216"
+},
+{
+"t": "2026-11-12T04:18:04.482659+00:00",
+"title": "Analista Jr De Sistemas Corporativos - Sistemas Corporativos",
+"company": "FIDI - Fundação Instituto de Pesquisa e Estudo de Diagnóstico por Imagem",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-jr-de-sistemas-corporativos-sistemas-corporativos-at-fidi-funda%C3%A7%C3%A3o-instituto-de-pesquisa-e-estudo-de-diagn%C3%B3stico-por-imagem-4489064235"
+},
+{
+"t": "2026-11-12T04:18:04.482659+00:00",
+"title": "Backend Engineer (AWS, Python/Node.js)",
+"company": "TechMagic",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/backend-engineer-aws-python-node-js-at-techmagic-4489050961"
+},
+{
+"t": "2026-11-12T04:18:04.482659+00:00",
+"title": "Analista de Sistemas | Cloud & Integrações",
+"company": "Sondotécnica Engenharia",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-de-sistemas-cloud-integra%C3%A7%C3%B5es-at-sondot%C3%A9cnica-engenharia-4490076250"
 }
 ]
