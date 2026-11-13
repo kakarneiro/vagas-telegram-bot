@@ -1,30 +1,6 @@
 [
 {
 "t": "2026-09-05T01:08:20.063021+00:00",
-"title": "Software Engineer I, Atlas Build Team (Hybrid, Sao Paolo)",
-"company": "FactSet",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/software-engineer-i-atlas-build-team-hybrid-sao-paolo-at-factset-4449815276"
-},
-{
-"t": "2026-09-05T01:08:20.063021+00:00",
-"title": "PGX ANL TI PL",
-"company": "Santander",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/pgx-anl-ti-pl-at-santander-4463684046"
-},
-{
-"t": "2026-09-05T01:08:20.063021+00:00",
-"title": "Software Engineer (Go, Python, CI/CD platform) Rotation On-Call , Hybrid",
-"company": "FactSet",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/software-engineer-go-python-ci-cd-platform-rotation-on-call-hybrid-at-factset-4452837594"
-},
-{
-"t": "2026-09-05T01:08:20.063021+00:00",
 "title": "Assistente de Mídia - Foco em Dados e Relatórios",
 "company": "Consumidor Moderno",
 "location": "São Paulo, SP",
@@ -3198,5 +3174,29 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagio-backoffice-i-republica-em-sao-paulo__12213074.aspx"
+},
+{
+"t": "2026-11-13T01:25:35.202132+00:00",
+"title": "Applications/Software Developer 1",
+"company": "IQVIA",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/applications-software-developer-1-at-iqvia-4489508322"
+},
+{
+"t": "2026-11-13T01:25:35.202132+00:00",
+"title": "Engenheiro de Dados Junior",
+"company": "BRQ Digital Solutions",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/engenheiro-de-dados-junior-at-brq-digital-solutions-4490554121"
+},
+{
+"t": "2026-11-13T01:25:35.202132+00:00",
+"title": "Desenvolvedor Fullstack (Java + Angular)",
+"company": "TOPMIND - IT Services",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-fullstack-java-%2B-angular-at-topmind-4489503891"
 }
 ]
