@@ -1,37 +1,5 @@
 [
 {
-"t": "2026-09-05T05:40:20.608263+00:00",
-"title": "Analista de TI",
-"company": "Fort Serv",
-"location": "São Paulo e Região",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/analista-de-ti-at-fort-serv-4461432774"
-},
-{
-"t": "2026-09-06T05:29:10.784604+00:00",
-"title": "Analista de Suporte de TI",
-"company": "Jobbol",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/analista-de-suporte-de-ti-at-jobbol-4464008134"
-},
-{
-"t": "2026-09-06T05:29:10.784604+00:00",
-"title": "Analista de Projetos e Sistemas",
-"company": "Jobbol",
-"location": "Cabreúva, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/analista-de-projetos-e-sistemas-at-jobbol-4463795184"
-},
-{
-"t": "2026-09-08T01:21:53.252958+00:00",
-"title": "Engenheiro de Software (Treinamento de IA)",
-"company": "Alignerr",
-"location": "São Paulo, SP",
-"source": "LinkedIn",
-"url": "https://br.linkedin.com/jobs/view/engenheiro-de-software-treinamento-de-ia-at-alignerr-4464415165"
-},
-{
 "t": "2026-09-08T18:33:00.234349+00:00",
 "title": "Analista de Suporte Junior - Propeg RJ (vaga temporária)",
 "company": "Propeg ",
@@ -3198,5 +3166,37 @@
 "location": "",
 "source": "InfoJobs",
 "url": "https://www.infojobs.com.br/vaga-de-estagiario-ti-automacao-processos-inicio-jan2027-em-goias__12226686.aspx"
+},
+{
+"t": "2026-11-18T01:39:36.829262+00:00",
+"title": "Desenvolvedor/Desenvolvedora Fullstack (Angular/Java)",
+"company": "Capgemini",
+"location": "Barueri, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-desenvolvedora-fullstack-angular-java-at-capgemini-4491774426"
+},
+{
+"t": "2026-11-18T01:39:36.829262+00:00",
+"title": "Desenvolvedor/Desenvolvedora Fullstack (Java/Angular)",
+"company": "Capgemini",
+"location": "Barueri, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/desenvolvedor-desenvolvedora-fullstack-java-angular-at-capgemini-4491788319"
+},
+{
+"t": "2026-11-18T01:39:36.829262+00:00",
+"title": "Analista de Suporte N1 - Help Desk",
+"company": "nommad",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-de-suporte-n1-help-desk-at-nommad-4491459517"
+},
+{
+"t": "2026-11-18T01:39:36.829262+00:00",
+"title": "Analista de Suporte de TI – Help Desk",
+"company": "Beltis",
+"location": "São Paulo, SP",
+"source": "LinkedIn",
+"url": "https://br.linkedin.com/jobs/view/analista-de-suporte-de-ti-%E2%80%93-help-desk-at-beltis-4491463415"
 }
 ]
